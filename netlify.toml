@@ -14,3 +14,10 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
+
+[[scheduled]]
+  function = "generateSitemap"
+  schedule = "@daily"
+
+[[plugins]]
+package = "@netlify/plugin-functions-install-core"
