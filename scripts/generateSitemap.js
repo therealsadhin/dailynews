@@ -9,19 +9,19 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Your website URL
-const WEBSITE_URL = 'https://yourdomain.com'; // Replace with your actual domain
+const WEBSITE_URL = 'https://dailynewshub.netlify.app'; // Updated domain
 
 async function generateSitemap() {
     // Get all HTML files
     const pages = await glob('**/*.html', {
-        cwd: path.join(__dirname, '../'),
+        cwd: path.join(__dirname, '../dist'),  // Changed to dist directory
         ignore: ['node_modules/**', 'scripts/**']
     });
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
         ${pages.map(page => {
-            const stats = fs.statSync(path.join(__dirname, '../', page));
+            const stats = fs.statSync(path.join(__dirname, '../dist', page));
             const lastmod = stats.mtime.toISOString().split('T')[0];
             const url = page === 'index.html' ? '' : page.replace('.html', '');
             
@@ -35,12 +35,12 @@ async function generateSitemap() {
         }).join('')}
     </urlset>`;
 
-    // Format the XML
+    // Format the sitemap
     const formattedSitemap = await prettier.format(sitemap, { parser: 'html' });
 
-    // Write to file
-    fs.writeFileSync(path.join(__dirname, '../public/sitemap.xml'), formattedSitemap);
-    console.log('Sitemap generated successfully!');
+    // Write to dist directory
+    fs.writeFileSync(path.join(__dirname, '../dist/sitemap.xml'), formattedSitemap);
+    console.log('Sitemap generated successfully in dist/sitemap.xml');
 }
 
 // Generate sitemap
