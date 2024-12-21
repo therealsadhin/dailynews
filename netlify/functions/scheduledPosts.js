@@ -1,20 +1,69 @@
 const { schedule } = require('@netlify/functions');
-const { NewsService } = require('../../src/services/newsService');
+
+const CATEGORIES = [
+  'business',
+  'entertainment',
+  'general',
+  'health',
+  'science',
+  'sports',
+  'technology'
+];
+
+class NewsService {
+  constructor(newsApiKey) {
+    this.newsApiKey = newsApiKey;
+  }
+
+  async fetchNewsArticles() {
+    const articles = [];
+    
+    // Fetch multiple articles for each category
+    for (const category of CATEGORIES) {
+      try {
+        const response = await fetch(
+          `https://newsapi.org/v2/top-headlines?country=us&category=${category}&pageSize=3&apiKey=${this.newsApiKey}`
+        );
+        const data = await response.json();
+        
+        if (data.articles && data.articles.length > 0) {
+          data.articles.forEach((article, index) => {
+            articles.push({
+              id: `${Date.now()}-${category}-${index}`,
+              title: article.title,
+              content: article.description || article.content,
+              imageUrl: article.urlToImage,
+              publishedAt: article.publishedAt,
+              source: article.source.name,
+              category
+            });
+          });
+        }
+      } catch (error) {
+        console.error(`Error fetching ${category} news:`, error);
+      }
+    }
+    
+    return articles;
+  }
+}
 
 const handler = async (event) => {
   console.log('Scheduled function started at:', new Date().toISOString());
   
   try {
-    const newsService = new NewsService(
-      process.env.VITE_NEWS_API_KEY,
-      process.env.VITE_GEMINI_API_KEY
-    );
+    const newsService = new NewsService(process.env.VITE_NEWS_API_KEY);
 
     // Fetch and process news articles
     const articles = await newsService.fetchNewsArticles();
     console.log(`Successfully fetched ${articles.length} articles`);
     
-    // Store the articles or update the database here
+    // Store the articles in Netlify's edge functions context
+    const context = event.context;
+    if (context && context.store) {
+      await context.store.set('articles', JSON.stringify(articles));
+      console.log('Articles stored successfully');
+    }
     
     return {
       statusCode: 200,

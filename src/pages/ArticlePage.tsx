@@ -36,6 +36,11 @@ export function ArticlePage() {
     loadArticle();
   }, [id]);
 
+  const handleBack = () => {
+    // Use browser's back button to preserve history
+    navigate(-1);
+  };
+
   if (loading) {
     return (
       <div className="container mx-auto px-6 py-24">
@@ -58,11 +63,12 @@ export function ArticlePage() {
   return (
     <div className="container mx-auto px-6 py-24">
       <Button
-        variant="ghost"
-        className="mb-6"
-        onClick={() => navigate(-1)}
+        variant="outline"
+        className="mb-6 bg-gray-100 border-2 border-gray-300 hover:bg-gray-200 flex items-center gap-2"
+        onClick={handleBack}
       >
-        <ArrowLeft className="mr-2 h-4 w-4" /> Back
+        <ArrowLeft className="h-5 w-5 text-gray-700" />
+        <span className="text-gray-700">Back</span>
       </Button>
 
       <article className="prose prose-lg mx-auto">

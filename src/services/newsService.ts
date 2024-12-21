@@ -129,11 +129,9 @@ export class NewsService {
 
   async getArticles(): Promise<NewsArticle[]> {
     try {
-      if (fs.existsSync(this.articlesPath)) {
-        const data = await fs.promises.readFile(this.articlesPath, 'utf8');
-        return JSON.parse(data);
-      }
-      return [];
+      const response = await fetch('/.netlify/functions/getArticles');
+      const articles = await response.json();
+      return articles;
     } catch (error) {
       console.error('Error reading articles:', error);
       return [];

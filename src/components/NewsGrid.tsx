@@ -17,8 +17,13 @@ interface NewsArticle {
 
 export function NewsGrid() {
   const [articles, setArticles] = useState<NewsArticle[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [currentPage, setCurrentPage] = useState(() => {
+    const savedPage = sessionStorage.getItem('currentPage');
+    return savedPage ? parseInt(savedPage) : 1;
+  });
+  const [selectedCategory, setSelectedCategory] = useState<string>(() => {
+    return sessionStorage.getItem('selectedCategory') || 'all';
+  });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -35,11 +40,34 @@ export function NewsGrid() {
     };
 
     loadArticles();
+
+    // Restore scroll position
+    const scrollPosition = sessionStorage.getItem('scrollPosition');
+    if (scrollPosition) {
+      window.scrollTo(0, parseInt(scrollPosition));
+    }
+  }, []);
+
+  // Save state to sessionStorage when it changes
+  useEffect(() => {
+    sessionStorage.setItem('currentPage', currentPage.toString());
+    sessionStorage.setItem('selectedCategory', selectedCategory);
+  }, [currentPage, selectedCategory]);
+
+  // Save scroll position when navigating away
+  useEffect(() => {
+    const handleScroll = () => {
+      sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
     setCurrentPage(1);
+    sessionStorage.setItem('scrollPosition', '0');
   };
 
   const filteredArticles = articles.filter(article => 

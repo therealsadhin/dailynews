@@ -34,5 +34,140 @@
     "publishedAt": "2024-12-15T06:01:21Z",
     "source": "Suntimes.com",
     "category": "entertainment"
+  },
+  {
+    "id": "1734350524211-business",
+    "title": "Tech Giants Announce Revolutionary AI Partnership",
+    "content": "In a groundbreaking development, leading tech companies have joined forces to create an unprecedented AI research alliance. The collaboration aims to advance artificial intelligence while ensuring ethical development and implementation. Industry experts predict this partnership could accelerate AI innovation by years.",
+    "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T05:58:33Z",
+    "source": "TechNews",
+    "category": "technology"
+  },
+  {
+    "id": "1734350524212-sports",
+    "title": "Historic Victory in World Cup Final",
+    "content": "In an electrifying match that kept millions on the edge of their seats, the underdog team secured a stunning victory in the World Cup final. The game, marked by spectacular plays and unprecedented teamwork, has already been dubbed 'The Miracle Match' by sports commentators worldwide.",
+    "imageUrl": "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=1935&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T06:30:00Z",
+    "source": "SportsCentral",
+    "category": "sports"
+  },
+  {
+    "id": "1734350524213-health",
+    "title": "Breakthrough in Cancer Treatment Research",
+    "content": "Scientists have announced a major breakthrough in cancer treatment, developing a new therapy that shows promising results in early trials. The innovative approach combines immunotherapy with targeted genetic modification, potentially offering hope to millions of patients worldwide.",
+    "imageUrl": "https://images.unsplash.com/photo-1579165466741-7f35e4755660?q=80&w=2070&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T07:15:00Z",
+    "source": "HealthDaily",
+    "category": "health"
+  },
+  {
+    "id": "1734350524214-entertainment",
+    "title": "Blockbuster Movie Breaks All-Time Box Office Records",
+    "content": "The latest installment in the popular film franchise has shattered global box office records, grossing over $3 billion worldwide. Critics and audiences alike praise the movie's groundbreaking special effects and compelling storytelling.",
+    "imageUrl": "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1925&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T08:00:00Z",
+    "source": "EntertainmentWeekly",
+    "category": "entertainment"
+  },
+  {
+    "id": "1734350524215-science",
+    "title": "Mars Mission Discovers Signs of Ancient Life",
+    "content": "NASA's latest Mars rover has uncovered compelling evidence of ancient microbial life on the Red Planet. The discovery, made in an ancient riverbed, includes fossilized remains that suggest Mars once harbored primitive life forms.",
+    "imageUrl": "https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=80&w=1974&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T08:45:00Z",
+    "source": "ScienceToday",
+    "category": "science"
+  },
+  {
+    "id": "1734350524216-business",
+    "title": "Global Economy Shows Strong Recovery Signs",
+    "content": "Economic indicators point to a robust recovery in the global markets, with major stock exchanges reaching new highs. Analysts attribute the upturn to technological innovation and sustainable business practices.",
+    "imageUrl": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1170&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T09:30:00Z",
+    "source": "BusinessInsider",
+    "category": "business"
+  },
+  {
+    "id": "1734350524217-technology",
+    "title": "Revolutionary Quantum Computer Breakthrough",
+    "content": "Scientists have achieved quantum supremacy with a new quantum computer that can perform calculations millions of times faster than traditional supercomputers. This breakthrough could revolutionize fields from cryptography to drug discovery.",
+    "imageUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T10:15:00Z",
+    "source": "TechReview",
+    "category": "technology"
+  },
+  {
+    "id": "1734350524218-sports",
+    "title": "Young Athlete Breaks Century-Old Record",
+    "content": "A 19-year-old athlete has broken a 100-year-old record in track and field, showcasing extraordinary talent and dedication. The achievement has sparked discussions about the evolution of athletic training and human potential.",
+    "imageUrl": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=2070&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T11:00:00Z",
+    "source": "SportsWeekly",
+    "category": "sports"
+  },
+  {
+    "id": "1734350524219-health",
+    "title": "Revolutionary Diet Study Changes Nutrition Guidelines",
+    "content": "A comprehensive 20-year study has led to a major revision of global nutrition guidelines. The findings challenge several long-held beliefs about diet and health, promising to reshape our approach to healthy eating.",
+    "imageUrl": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T11:45:00Z",
+    "source": "HealthNews",
+    "category": "health"
+  },
+  {
+    "id": "1734350524220-entertainment",
+    "title": "Streaming Platform Launches Revolutionary Service",
+    "content": "A major streaming platform has unveiled a groundbreaking service that combines virtual reality with traditional content, offering viewers an unprecedented immersive entertainment experience.",
+    "imageUrl": "https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=1170&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T12:30:00Z",
+    "source": "EntertainmentDaily",
+    "category": "entertainment"
+  },
+  {
+    "id": "1734350524221-science",
+    "title": "Breakthrough in Clean Energy Technology",
+    "content": "Researchers have developed a new form of clean energy technology that could revolutionize how we power our world. The innovation promises to provide sustainable, cost-effective energy solutions for developing nations.",
+    "imageUrl": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T13:15:00Z",
+    "source": "ScienceDaily",
+    "category": "science"
+  },
+  {
+    "id": "1734350524222-business",
+    "title": "Start-up Revolutionizes Financial Technology",
+    "content": "A innovative start-up has introduced a groundbreaking financial technology platform that could transform how we handle digital transactions. The platform combines blockchain technology with artificial intelligence to provide secure and efficient financial services.",
+    "imageUrl": "https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=2070&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T14:00:00Z",
+    "source": "FinTechNews",
+    "category": "business"
+  },
+  {
+    "id": "1734350524223-technology",
+    "title": "New AI System Masters Human Learning",
+    "content": "A revolutionary artificial intelligence system has demonstrated the ability to learn and adapt in ways previously thought exclusive to human cognition. This breakthrough could lead to significant advances in education and cognitive science.",
+    "imageUrl": "https://images.unsplash.com/photo-1555255707-c07966088b7b?q=80&w=1932&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T14:45:00Z",
+    "source": "AIToday",
+    "category": "technology"
+  },
+  {
+    "id": "1734350524224-sports",
+    "title": "E-Sports Tournament Breaks Viewing Records",
+    "content": "The latest international e-sports tournament has shattered all previous viewing records, with over 100 million concurrent viewers worldwide. The event highlights the growing mainstream acceptance of competitive gaming.",
+    "imageUrl": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T15:30:00Z",
+    "source": "GamingSphere",
+    "category": "sports"
+  },
+  {
+    "id": "1734350524225-health",
+    "title": "Mental Health Innovation Transforms Treatment",
+    "content": "A new approach to mental health treatment, combining traditional therapy with advanced technology, has shown remarkable success in clinical trials. The method could revolutionize how we address mental health challenges globally.",
+    "imageUrl": "https://images.unsplash.com/photo-1527613426441-4da17471b66d?q=80&w=2070&auto=format&fit=crop",
+    "publishedAt": "2024-12-21T16:15:00Z",
+    "source": "MentalHealthToday",
+    "category": "health"
   }
 ]
