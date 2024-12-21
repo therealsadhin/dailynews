@@ -1,3 +1,4 @@
+const cron = require('node-cron');
 const { exec } = require('child_process');
 const path = require('path');
 
@@ -8,14 +9,11 @@ const scriptDir = __dirname;
 function runScheduler() {
     console.log('Running scheduler at:', new Date().toISOString());
     
-    // Path to Node.js executable in cPanel (using full path)
-    const nodePath = '/usr/local/bin/node';
-    
     // Path to the scheduler script
-    const schedulerPath = path.join(scriptDir, 'src/scheduler.ts');
+    const schedulerPath = path.join(scriptDir, 'src/scripts/startScheduler.ts');
     
-    // Command to run the scheduler with ts-node
-    const command = `${nodePath} -r ts-node/register ${schedulerPath}`;
+    // Command to run the scheduler
+    const command = `npx ts-node ${schedulerPath}`;
     
     exec(command, (error, stdout, stderr) => {
         if (error) {
@@ -28,6 +26,11 @@ function runScheduler() {
         console.log('Scheduler output:', stdout);
     });
 }
+
+// Schedule to run every day at 00:00 (midnight)
+cron.schedule('0 0 * * *', () => {
+    runScheduler();
+});
 
 // Run immediately when script starts
 runScheduler();

@@ -1,4 +1,3 @@
-import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -15,36 +14,44 @@ export function Header() {
         <div className="bg-white/80 backdrop-blur-md rounded-lg shadow-lg mt-4">
           <div className="px-4 py-4">
             <div className="flex items-center justify-between">
-              <Link to="/" className="text-2xl font-bold text-gray-800 mr-8">NewsDaily</Link>
+              <Link to="/" className="text-xl md:text-2xl font-bold text-gray-800 mr-4 md:mr-8">NewsDaily</Link>
               
-              {/* Desktop Navigation */}
-              <nav className="hidden md:flex items-center space-x-8">
-                <Link to="/" className="text-gray-600 hover:text-gray-900">Home</Link>
-                <Link to="/trending" className="text-gray-600 hover:text-gray-900">Trending</Link>
-                <Link to="/latest" className="text-gray-600 hover:text-gray-900">Latest</Link>
-                <Link to="/subscribe" className="text-gray-600 hover:text-gray-900">Subscribe</Link>
+              {/* Desktop and Tablet Navigation */}
+              <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
+                <Link to="/" className="text-sm lg:text-base text-gray-600 hover:text-gray-900">Home</Link>
+                <Link to="/trending" className="text-sm lg:text-base text-gray-600 hover:text-gray-900">Trending</Link>
+                <Link to="/latest" className="text-sm lg:text-base text-gray-600 hover:text-gray-900">Latest</Link>
+                <Link to="/subscribe" className="text-sm lg:text-base text-gray-600 hover:text-gray-900">Subscribe</Link>
               </nav>
 
               {/* Mobile Navigation */}
               <div className="md:hidden">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="icon">
-                      <Menu className="h-6 w-6" />
+                    <Button 
+                      variant="outline" 
+                      size="icon" 
+                      className="bg-gray-100 border-2 border-gray-300 hover:bg-gray-200"
+                    >
+                      <img 
+                        src="/burger-menu-svgrepo-com.svg" 
+                        alt="Menu" 
+                        className="h-6 w-6 invert brightness-0"
+                      />
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end">
-                    <DropdownMenuItem>
-                      <Link to="/">Home</Link>
+                  <DropdownMenuContent align="end" className="w-48 bg-white">
+                    <DropdownMenuItem className="cursor-pointer hover:bg-gray-100">
+                      <Link to="/" className="w-full text-gray-900">Home</Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Link to="/trending">Trending</Link>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-gray-100">
+                      <Link to="/trending" className="w-full text-gray-900">Trending</Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Link to="/latest">Latest</Link>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-gray-100">
+                      <Link to="/latest" className="w-full text-gray-900">Latest</Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
-                      <Link to="/subscribe">Subscribe</Link>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-gray-100">
+                      <Link to="/subscribe" className="w-full text-gray-900">Subscribe</Link>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
