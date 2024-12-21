@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "scheduler": "tsx src/scripts/startScheduler.ts"
+    "scheduler": "tsx src/scripts/startScheduler.ts",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",

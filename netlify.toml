@@ -3,10 +3,14 @@
   to = "/index.html"
   status = 200
 
+[build]
+  command = "CI= npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_VERSION = "10"
+
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
-
-[build]
-  command = "npm run build"
-  publish = "dist"
